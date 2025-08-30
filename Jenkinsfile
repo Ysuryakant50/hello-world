@@ -1,11 +1,5 @@
 pipeline {
     agent any
-    environment {
-        MAVEN_HOME = '/usr/share/maven' // Path to Maven installation
-    }
-    tools {
-        maven 'Maven 3.6.3' // Replace with your Maven tool name configured in Jenkins
-    }
     stages {
         stage('Checkout Code') {
             steps {
@@ -24,7 +18,7 @@ pipeline {
         }
         stage('Code Analysis with SonarQube') {
             environment {
-                SONARQUBE_SERVER = 'SonarQubeServer' // Replace with your SonarQube installation name
+                SONARQUBE_SERVER = 'SonarQubeServer' // Replace with your SonarQube installation name configured in Jenkins
             }
             steps {
                 withSonarQubeEnv(SONARQUBE_SERVER) {
