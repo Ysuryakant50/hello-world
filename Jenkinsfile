@@ -19,7 +19,7 @@ pipeline {
 
             steps {
 
-                git 'https://github.com/007AnupamSharma/hello-world.git'
+                git 'https://github.com/Ysuryakant50/hello-world.git'
 
             }
 
@@ -49,6 +49,19 @@ pipeline {
 
         }
 
+        stage('Code Analysis with SonarQube') { // Runs static code analysis
+
+            steps {
+
+                withSonarQubeEnv(SONARQUBE_SERVER) {
+
+                    sh 'mvn sonar:sonar'
+
+                }
+
+            }
+
+        }
       
 
     }
