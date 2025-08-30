@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Code Analysis with SonarQube') {
             environment {
-                SONARQUBE_SERVER = 'SonarQubeServer' // Replace with your SonarQube installation name configured in Jenkins
+                SONARQUBE_SERVER = 'sonarqube' // Replace with your SonarQube installation name configured in Jenkins
             }
             steps {
                 withSonarQubeEnv(SONARQUBE_SERVER) {
